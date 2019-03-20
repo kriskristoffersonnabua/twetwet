@@ -41,9 +41,19 @@ class HomeForm extends React.Component {
 		const { isReply } = this.props
 
 		return (
-			<div>
-				<textarea value={twet} onChange={this.setValue} name="twet" />
-				<button onClick={!isReply ? this.submitTwet : this.replyTweet}>
+			<div className="section">
+				<textarea
+					className="textarea"
+					value={twet}
+					onChange={this.setValue}
+					name="twet"
+					row="10"
+					style={{ marginBottom: '20px' }}
+				/>
+				<button
+					className="button is-primary"
+					style={{ float: 'right' }}
+					onClick={!isReply ? this.submitTwet : this.replyTweet}>
 					submit
 				</button>
 			</div>

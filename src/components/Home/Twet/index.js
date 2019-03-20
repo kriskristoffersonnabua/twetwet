@@ -42,25 +42,43 @@ class Twet extends React.Component {
 	render() {
 		const { twet, showReplyForm, tid } = this.state
 		return (
-			<div>
-				<div>
+			<div className="media" style={{ padding: '10px' }}>
+				<figure class="media-left">
+					<p class="image is-64x64">
+						<img src="https://api.adorable.io/avatars/285/abott@adorable.png" />
+					</p>
+				</figure>
+				<div className="media-content">
+					<p>
+						<strong style={{ marginRight: '5px' }}>
+							Anonymous Stranger
+						</strong>
+						<small>@anony</small>
+					</p>
 					<p>{!!twet && twet}</p>
-					<button onClick={this.toggleReplyForm}>reply</button>
-					<button onClick={this.retwet}>retweet</button>
-					<button onClick={this.removeTwet}>delete</button>
+					<a class="icon" onClick={this.toggleReplyForm}>
+						<i class="fas fa-reply" />
+					</a>
+					<a class="icon" onClick={this.retwet}>
+						<i class="fas fa-retweet" />
+					</a>
+					<a class="icon" onClick={this.removeTwet}>
+						<i class="fas fa-trash" />
+					</a>
+					<br />
+					<div>
+						{this.state.replies.map(reply => {
+							return <p>{reply.reply}</p>
+						})}
+						{showReplyForm ? (
+							<HomeForm
+								isReply={true}
+								tid={tid}
+								replies={this.state.replies}
+							/>
+						) : null}
+					</div>
 				</div>
-				<ul>
-					{this.state.replies.map(reply => {
-						return <p>{reply.reply}</p>
-					})}
-					{showReplyForm ? (
-						<HomeForm
-							isReply={true}
-							tid={tid}
-							replies={this.state.replies}
-						/>
-					) : null}
-				</ul>
 			</div>
 		)
 	}

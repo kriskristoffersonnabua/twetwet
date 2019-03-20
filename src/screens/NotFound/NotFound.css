@@ -1,0 +1,55 @@
+.notfound {
+	font-size: 126px;
+	font-weight: 1000;
+	animation-name: growFont;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	animation-timing-funciton: ease-in;
+}
+
+.imagekuno {
+	width: 800px;
+	height: 600px;
+	position: absolute;
+	border-radius: 1120px;
+	opacity: 0;
+	animation-name: opac;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes opac {
+	0% {
+		opacity: 0;
+	}
+	10% {
+		opacity: 0;
+	}
+	30% {
+		opacity: 0;
+	}
+	70% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes growFont {
+	0% {
+		font-size: 126px;
+	}
+	10% {
+		font-size: 426px;
+	}
+	30% {
+		font-size: 626px;
+	}
+	70% {
+		font-size: 926px;
+	}
+	100% {
+		font-size: 1126px;
+	}
+}
