@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase": "^5.9.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-router-dom": "^5.0.0",
     "react-scripts-parcel": "0.0.38"
   },
   "scripts": {
@@ -25,5 +27,8 @@
       "Firefox ESR",
       "not ie < 11"
     ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3"
   }
 }
